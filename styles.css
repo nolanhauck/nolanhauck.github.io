@@ -6,7 +6,38 @@
         list-style-type: none;
         margin: 0;
         padding: 0;
-        background-color: #F1F1F1;
+        background-color: chocolate;
         width: 100px;
 }
 
+.wrapper {
+    text-align: center;
+}
+
+.wrapper ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper li {
+    float: center;
+    padding: 2px 5px;
+}
+a {
+    color: #523724;
+}
+a:link:hover {
+    color: #52290B;
+}
+a:visited {
+    color: #3B1D08;
+}
+a:visited:hover {
+    color: #52290B;
+}
+hr {
+    height: 1px;
+    background-color: #3B1D08;
+    border: none;
+}
