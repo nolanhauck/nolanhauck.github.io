@@ -48,9 +48,25 @@ hr {
     border: none;
 }
 
-center {
+.center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 300px;
+    width: 50%;
 }
+
+/*creates three top-to-bottom columns of equal width*/
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 100%;
+}
+
+/*Clears floats after the whatever div it is to create a new row*/
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
