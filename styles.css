@@ -58,7 +58,7 @@ hr {
 /*creates three top-to-bottom columns of equal width*/
 .column {
     float: left;
-    width: 33.33%;
+    width: 33%;
     padding: 10px;
 }
 
