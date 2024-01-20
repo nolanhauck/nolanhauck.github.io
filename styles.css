@@ -58,14 +58,17 @@ hr {
 /*creates three top-to-bottom columns of equal width*/
 .column {
     float: left;
-    width: 33%;
-    padding: 10px;
+    width: 32%;
+    padding: 4px;
 }
 
 /*Clears floats after the whatever div it is to create a new row*/
-.row:after {
+.row::after {
     content: "";
     display: table;
     clear: both;
 }
 
+h2 {
+    background-color: chocolate;
+}
