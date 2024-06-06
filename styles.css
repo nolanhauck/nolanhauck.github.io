@@ -72,3 +72,41 @@ hr {
 h2 {
     background-color: chocolate;
 }
+
+/* for creating dropdown menus*/
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    width: 100%;
+    overflow: auto;
+    border: 2px solid #3B1D08;
+    position: relative;  /* <-- added declarations */
+    left: 0; top: 100%;  /*     here               */
+    width: 100%;         /*     and here...        */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 9999;
+}
+
+.dropdown-content a {
+    display: block;
+    color: black;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    color: #D9925F;
+    background-color: #3B1D08;
+}
+
+button {
+    background-color: #D9925F;
+    border: 2px solid #3B1D08;
+}
