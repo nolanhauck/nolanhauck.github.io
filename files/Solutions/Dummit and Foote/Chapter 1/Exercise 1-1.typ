@@ -1,9 +1,9 @@
-#import "/solutionstyle.typ": template
+#import "/files/Solutions/solutionstyle.typ"
 
-#show: template.with(
+#show: solutionstyle.template.with(
   book: "Abstract Algebra",
   author: "Dummit and Foote",
-  chapter: "1",
-  section: "1",
-  num: "1"
+  chapter: 1,
+  section: 1,
+  num: 1
 )
