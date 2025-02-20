@@ -64,7 +64,6 @@ def create_middle_lines(row_number, sortedlistoflistsofexercises, authors):
             chapter_links.append('                <a href="./files/Solutions/' + authors + '/Chapter ' + str(3*row_number + x + 1) + '/' + item + '">' + item[:-4] + '</a>\n')
         links.append(chapter_links)
 
-    print(links)
     middle_lines = [
         '    <!--Chapter ' + str(3*row_number + 1) + ',' + str(3*row_number + 2) + ',' + str(3*row_number + 3) + '-->\n',
         '    <div class="row">\n',
@@ -102,6 +101,45 @@ def create_middle_lines(row_number, sortedlistoflistsofexercises, authors):
     ]
     return middle_lines
 
+def create_extra_lines(columns,full_rows,sortedlistoflistsofexercises,authors):
+    links = []
+    if columns == 0:
+        return []
+    elif columns == 1:
+        chapter_links = []
+        for item in sortedlistoflistsofexercises[3*full_rows]:
+            chapter_links.append('                <a href="./files/Solutions/' + authors + '/Chapter ' + str(3*full_rows + 1) + '/' + item + '">' + item[:-4] + '</a>\n')
+        links.append(chapter_links)
+    elif columns == 2:
+        for x in range(columns):
+            chapter_links = []
+            for item in sortedlistoflistsofexercises[3*full_rows + x]:
+                chapter_links.append('                <a href="./files/Solutions/' + authors + '/Chapter ' + str(3*full_rows + x + 1) + '/' + item + '">' + item[:-4] + '</a>\n')
+            links.append(chapter_links)
+
+    full_lines = [
+        '    <!--Chapter ' + str(3*full_rows + 1) + ',' + str(3*full_rows + 2) + ',' + str(3*full_rows + 3) + '-->\n',
+        '    <div class="row">\n'
+        ]
+
+    for x in range(columns):
+        column_lines = [
+        '        <!--Chapter ' + str(3*full_rows + x + 1) + ' references-->\n',
+        '        <div class="column">\n',
+        '            <div id="header 2">\n',
+        '                <h2 style="text-align: center;">\n',
+        '                    Chapter ' + str(3*full_rows + x + 1) + '\n',
+        '                </h2>\n',
+        '            </div>\n',
+        '            <div id="links">\n'] + links[x] + [
+        '            </div>\n'
+        ]
+        for line in column_lines: 
+            full_lines.append(line)
+
+
+    return full_lines
+
 def sort_key_exercises(filename):
     """
     Extracts a numerical value from the filename for sorting.
@@ -132,7 +170,6 @@ def main():
     for item in os.listdir(book_path):
         chapters_list.append(item)
     sorted_chapters_list = sorted(chapters_list, key=sort_key_chapters)
-    print(sorted_chapters_list)
 
     list_of_lists_of_sorted_exercises = []
 
@@ -190,12 +227,14 @@ def main():
 
     
 
-    with open("test.html","w") as f:
+    with open("AlgebraSolutions.html","w") as f:
         for line in beginning_lines:
             f.write(line)
         for x in range(full_row_count):
             for line in create_middle_lines(x, list_of_lists_of_sorted_exercises, authors_of_book):
                 f.write(line)
+        for line in create_extra_lines(columns_in_last_row, full_row_count, list_of_lists_of_sorted_exercises, authors_of_book):
+            f.write(line)
         for line in ending_lines:
             f.write(line)
                 
