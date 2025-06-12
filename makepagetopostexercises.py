@@ -161,15 +161,27 @@ def sort_key_chapters(directoryname):
         return -1 # Handle cases where the directoryname doesn't match the expected format
 
 
-def main():
-    authors_of_book = input("authors of book? be very precise lol ")
-    title_of_book = input("Title of book ")
-    book_path = "C:/Users/nhauc/OneDrive/Documents/GitHub/nolanhauck.github.io/files/Solutions/" + authors_of_book
+def create_sorted_chapters_list(authors):
+    """
+    Takes location of the book directory and returns list of chapters in correct natural order
+    """
+
+    book_path = "C:/Users/nhauc/OneDrive/Documents/GitHub/nolanhauck.github.io/files/Solutions/" + authors
 
     chapters_list = glob.glob("Chapter *")
     for item in os.listdir(book_path):
         chapters_list.append(item)
     sorted_chapters_list = sorted(chapters_list, key=sort_key_chapters)
+
+    return sorted_chapters_list
+
+def create_sorted_list_of_exercises(authors, sorted_chapters_list):
+    """
+    Takes the location of the book and sorted chapters and returns list of lists of sorted exercises in correct natural order by chapter as well
+    """
+
+    book_path = "C:/Users/nhauc/OneDrive/Documents/GitHub/nolanhauck.github.io/files/Solutions/" + authors   
+    
 
     list_of_lists_of_sorted_exercises = []
 
@@ -180,6 +192,24 @@ def main():
             files_list.append(item2)
         sorted_files_list = sorted(files_list, key=sort_key_exercises)
         list_of_lists_of_sorted_exercises.append(sorted_files_list)
+
+    return list_of_lists_of_sorted_exercises
+
+
+def main():
+
+    
+
+    authors_of_book = input("authors of book? be very precise lol ")
+    title_of_book = input("Title of book ")
+
+    book_path = "C:/Users/nhauc/OneDrive/Documents/GitHub/nolanhauck.github.io/files/Solutions/" + authors_of_book
+    
+    sorted_chapters_list = create_sorted_chapters_list(authors_of_book)
+
+    list_of_lists_of_sorted_exercises = create_sorted_list_of_exercises(authors_of_book,sorted_chapters_list)
+
+    
 
 
     beginning_lines = [
@@ -208,6 +238,8 @@ def main():
         '    </div>\n'
     ]
     ending_lines = [
+        '        </div>\n',
+        '    </div>\n',
         '    <div class="wrapper" id="navbar">\n',
         '        <ul class="nav-bar-ul">\n',
         '            <li><a href="./index.html">Home</a></li>\n',
@@ -217,7 +249,7 @@ def main():
         '<!--Footer-->\n',
         '<div>\n',
         '    <footer>\n',
-        '        Views and opinion expressed here are entirely my own and are not intended to reflect on the University of Missouri.\n',
+        '        Views and opinions expressed here are entirely my own and are not intended to reflect on the University of Missouri.\n',
         '    </footer>\n',
         '</div>\n',
         '</html>'

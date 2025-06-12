@@ -20,14 +20,55 @@
 </head>
 <body>
     <h1>Blog</h1>
+    <div class="login-form">
+        <h2>Login</h2>
+        <form action="#"> 
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br> 
+            
+            <button type="submit" onclick="checkPassword()">Login</button>
+        </form>
+    </div>
+    <script>
+
+        function checkPassword() {
+
+            let enteredPassword = document.getElementById("password").value;
+
+            if (enteredPassword === "peoplegiveupsoeasily") {
+
+                document.getElementById("protectedContent").style.display = "block";
+
+            } else {
+
+                alert("Incorrect Password");
+
+            }
+
+        }
+
+    </script>
+
+    <div id="protectedContent" style="display: none;">
+        <h2>Post Saturday March 1st, 2025</h2>
+            <p>
+                So I guess this is my first blog post. I think there are several reasons I'm doing this. The first is that Sophie is not home this weekend so I've had a lot of downtime. I'm also avoiding doing work (oops). This is also one of the original reasons I made a wesbite. I initially thought I was going to have some really well-put-together blog going, but that's unrealistic at this stage. Another reason I'm doing this is really I want a way to passively connect with people that I love who are far away without the distraction that is regular social media. Maybe a final reason is that I want to have a cool record of the things that go on in my life, in the style of a webpage from 2003 (lol). <br>
+
+                This will be very unserious, but as it is public, I will keep it quite tame. I plan to tell stories and make banal observations. Perhaps it's unprofessional to post this in the same place as other more math-realted things, but it is my website and I'll be careful about what exactly I decide to post.
+            </p>
+    </div>
+
+
 
 <!--Nav Bar-->
     <div class="wrapper">
         <ul class="nav-bar-ul">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
-            <!-- <li><a href="./blog.html">Blog</a></li> -->
+            <li><a href="./blog.html">Blog</a></li>
             <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./clock.html">Clock</a></li>
             <!-- <li><a href="./coolthings.html">Cool Things</a></li> -->
         </ul>
     </div>
