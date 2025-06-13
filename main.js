@@ -34,7 +34,7 @@ window.addEventListener("load", () => {
             "December"
         ]
         // construct current date and time strings
-        const date = monthList[month] + " " + day + "," + year;
+        const date = monthList[month] + " " + day + ", " + year;
         const time = hour + ":" + minute + ":" + second;
 
         // combine into one string
