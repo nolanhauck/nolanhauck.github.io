@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="styles.css">
+<html lang="en-US">
+<style>
+    h1 {
+        text-align: center;
+        font-size:32px; 
+        background-color: chocolate;
+    }
+    body {
+        background-color: #D9925F;
+    }
+    li a {
+        display: block;
+        text-align: center;
+    }
+   /* ul {
+        list-style-type: none;
+    }
+    li {
+        background-image: url(images/bullet.jpg);
+        background-repeat: no-repeat;
+        background-position: 0px 50%;
+        padding-left: 7px;
+    }*/
+</style>
+<head>
+    <title>Nolan Hauck's Webpage</title>
+</head>
+<body>
+    <!-- <div>
+        <h1> Nolan Hauck's Webpage</h1>
+        <div>
+            <img src="files/me.jpg" alt="Me!" class="center">
+        </div>
+        <p style="font-size:18px; text-align: center; ">Hello and welcome to my website. <br>
+            This site is meant as a sort of hub for all things <em>Nolan</em>. <br>
+            Currently it is serving as the outlet for my learning html/js. <br>
+            Whether you are a student of mine, a friend, employer, acquaintance, some combination thereof, or none at all,
+            I hope you find here whatever it is you are looking for. <br>
+            ;&#41;
+        </p> -->
+        <!--First row of blocks-->
+        <div class="row">
+            <!--BIO-->
+            <div class="column">
+                <div>
+                    <h2>
+                        Bio
+                    </h2>
+                </div>
+                <p style="text-align: left;">
+                    I am a PhD student in Mathematics at the University of Missouri-Columbia. I've passed my qualification exams now, and I plan to begin researching PDE soon.
+                </p>
+            </div>
+            <!--Classes Taught-->
+            <div class="column">
+                <div>
+                    <h2>
+                        Classes Taught
+                    </h2>
+                </div>
+                <ul>
+                    <li>MATH 1100 College Algebra</li>
+                    <div class="dropdown">
+                        <button>Evaluations</button>
+                        <div class="dropdown-content">
+                            <a rel="noopener" target="_blank" href="files/Evaluations/FS23CollegeAlgebraevals.pdf">FS23</a>
+                            <a rel="noopener" target="_blank" href="files/Evaluations/SP24CollegeAlgebraevals.pdf">SP24</a>
+                        </div>
+                    </div>
+                    <li>MATH 1400 Calculus for Social and Life Sciences</li>
+                    <div class="dropdown">
+                        <button>Evaluations</button>
+                        <div class="dropdown-content">
+                            <a rel="noopener" target="_blank" href="files/Evaluations/FS24BusinessCalcevals.pdf">FS24</a>  
+                            <a rel="noopener" target="_blank" href="files/Evaluations/SP25BusinessCalcevals.pdf">SP25</a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <!--For Students-->
+            <div class="column">
+                <div>
+                    <h2>
+                        For Students
+                    </h2>
+                </div> 
+                <div class="dropdown">
+                    <button>Helpful Documents</button>
+                    <div class="dropdown-content">
+                        <a rel="noopener" target="_blank" href="files/addingfractions.pdf">Adding fractions</a>
+                        <a rel="noopener" target="_blank" href="files/distributivelaw.pdf">Distributive Property</a>
+                    </div>
+                </div>
+                <br>
+                <div class="dropdown">
+                    <button>MATH1100SP24 Quiz Answer Keys</button>
+                    <div class="dropdown-content">
+                        <a rel="noopener" target="_blank" href="files/Answer Keys/MATH1100SP24/MATH1100SP24q1key.pdf">Quiz 1</a>
+                        <a rel="noopener" target="_blank" href="files/Answer Keys/MATH1100SP24/MATH1100SP24q2key.pdf">Quiz 2</a>
+                        <a rel="noopener" target="_blank" href="files/Answer Keys/MATH1100SP24/MATH1100SP24q3key.pdf">Quiz 3</a>
+                        <a rel="noopener" target="_blank" href="files/Answer Keys/MATH1100SP24/MATH1100SP24q4key.pdf">Quiz 4</a>
+                        <a rel="noopener" target="_blank" href="files/Answer Keys/MATH1100SP24/MATH1100SP24q5key.pdf">Quiz 5</a>
+                        <a rel="noopener" target="_blank" href="files/Answer Keys/MATH1100SP24/MATH1100SP24q6key.pdf">Quiz 6</a>
+                        <a rel="noopener" target="_blank" href="files/Answer Keys/MATH1100SP24/MATH1100SP24q7key.pdf">Quiz 7</a>
+                        <a rel="noopener" target="_blank" href="files/Answer Keys/MATH1100SP24/MATH1100SP24q8key.pdf">Quiz 8</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Second row of blocks-->
+        <div class="row">
+            <!--Links to posted solutions pages-->
+            <div class="column">
+                <div>
+                    <h2>
+                        Solutions
+                    </h2>
+                </div>
+                <div class="dropdown">
+                    <button>Books</button>
+                    <div class="dropdown-content">
+                        <a href="./RealAnalysisSolutions.html">Real Analysis: Modern Techniques and Their Applications, 2nd Edition by Gerald B. Folland</a>
+                        <a href="./AlgebraSolutions.html">Abstract Algebra 3rd Edition by Dummit and Foote</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                
+            </div>
+            <div class="column">
+                
+            </div>
+        </div>
+        <hr>
+    </div>
+<!--Nav Bar-->
+    <div class="wrapper" id="navbar">
+        <ul class="nav-bar-ul">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./clock.html">Clock</a></li>
+            <li><a href="./calculators.html">Calculators</a></li>
+            <!-- <li><a href="./coolthings.html">Cool Things</a></li> -->
+        </ul>
+    </div>
+</body>
+<!--Footer-->
+<div>
+    <footer>
+        Views and opinions expressed here are entirely my own and are not intended to reflect on the University of Missouri.
+    </footer>
+</div>
+</html>

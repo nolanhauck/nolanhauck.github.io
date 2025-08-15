@@ -36,6 +36,8 @@ footer {
     float: center;
     padding: 2px 5px;
 }
+
+/* For links */
 a {
     color: #523724;
 }
@@ -115,4 +117,33 @@ h2 {
 button {
     background-color: #D9925F;
     border: 2px solid #3B1D08;
+}
+
+/* Calculator stuff */
+
+.calculator {
+    background-color: #523724;
+    border: #D9925F;
+}
+
+.calculator-display {
+    background-color: #523724;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates a 4-column grid */
+    gap: 5px; /* Spacing between buttons */
+}
+
+.clear {
+    background-color: aqua;
+}
+
+.equal {
+    background-color: brown;
+}
+
+.operator {
+    background-color: chartreuse;
 }
